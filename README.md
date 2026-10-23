@@ -27,7 +27,7 @@ All of these combinations of features combined creates a full-stack web applicat
 
 ## Developer Guide
 
-This project is separated into two components, the frontend and the backend. For the prroject to run successfully, we'll need run the development server for each component stack.
+This project is separated into two components, the frontend and the backend. For the project to run successfully, we'll need run the development server for each component stack.
 
 To start, copy the `.env.example` file at the project's root directory, paste it in the `frontend` and `backend` directory while simply renaming it to `.env`, and replace the `DJANGO_SECRET_KEY` variable with a randomly generated string which will be used to sign our JWT. You can generate a random UUID to use for this secret's value as an example. Go to <https://www.uuidgenerator.net/version4> to generate a radom UUID.
 
