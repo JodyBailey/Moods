@@ -1,8 +1,5 @@
 # Moods
 
-Final Project for CS50W course
-Created by Jody Bailey
-
 ## What Is This Project?
 
 A mood tracking application consisting of a Django backend and a ReactJS frontend. It allows users to create, update, and delete journal entries which specifies how good of a day each day was, list the emotions they felt, what they did, and what contributed the most to their overall mood that day. Once they have at least one journal entry, they can view statistics for tracking what their average mood is, how it has progressed from each journal entry, what contributed the most to a positive and negative mood, and how many contributor, emotion, and activity entries they have so far.
