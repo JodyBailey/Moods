@@ -1,15 +1,21 @@
+import { ToastContainer } from "react-toastify";
+import { Inspiration, Poiret_One } from "next/font/google";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import "./globals.css";
+import Providers from "./providers";
+
+const inspiration = Inspiration({
+  variable: "--font-inspiration",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poiretOne = Poiret_One({
+  variable: "--font-poiret-one",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -19,8 +25,31 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${inspiration.variable} ${poiretOne.variable}`}>
+      <head>
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body>
+        <AppRouterCacheProvider>
+          <ToastContainer
+            position="top-right"
+            theme="light"
+            autoClose={5000}
+            closeOnClick
+            stacked
+            pauseOnFocusLoss
+            hideProgressBar
+            draggable
+            pauseOnHover
+          />
+          <Providers>{children}</Providers>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
