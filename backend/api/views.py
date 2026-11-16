@@ -100,7 +100,6 @@ class StatisticsView(APIView):
 
     def get_average_mood_timeline(self, entries):
         def acc_func(prev, curr):
-            # curr[0] = index, curr[1] = entry
             if prev == None:
                 return {'timeline': [{'date': curr[1].date, 'average': float(curr[1].sentiment)}], 'total': curr[1].sentiment}
 
